@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/map_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#F1D8B1"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Memory Map"
+        app:titleMarginStart="100dp"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:titleTextColor="#AC854C" />
+
+    <EditText
+        android:id="@+id/location_editText"
+        android:layout_width="250dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="Search Location"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/map_toolbar" />
+
+    <Button
+        android:id="@+id/search_button"
+        android:layout_width="38dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="4dp"
+        android:layout_weight="1"
+        android:background="@drawable/ic_search"
+        android:onClick="searchLocation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/map_toolbar" />
+
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="53dp"
+        android:layout_height="57dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow"
+        android:onClick="backButtonClick" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/location_editText">
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <fragment
+        android:id="@+id/mapsfragment"
+        class="com.example.memorymap.MapsFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/connections_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipGroup" />
+
+    <Button
+        android:id="@+id/connections_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add a Connection"
+        app:layout_constraintBottom_toTopOf="@+id/openCreate_button"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/openCreate_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="openCreate"
+        android:text="Create New Entry"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
