@@ -32,7 +32,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyACZ4_IMaRyg88vuq_PCM_ko67JQ7xbgb0" />
+            android:value="${GOOGLEMAPS_KEY}" />
         <meta-data
             android:name="OnlineRouting.Key"
             android:value="mBagson4Gd8qO9hidX4euSbpwtcjGj3l" />

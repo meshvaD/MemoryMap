@@ -56,7 +56,7 @@ public class CreateActivity extends AppCompatActivity implements OnMapReadyCallb
     public void showLocation(View view) {
         gMap.clear();
 
-        SearchApi searchApi = OnlineSearchApi.create(this, "mBagson4Gd8qO9hidX4euSbpwtcjGj3l");
+        SearchApi searchApi = OnlineSearchApi.create(this, BuildConfig.TOMTOM_KEY);
 
         //fuzzy search output
         EditText input = findViewById(R.id.newLoc_editText);

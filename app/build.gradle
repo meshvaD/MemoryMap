@@ -24,6 +24,14 @@ android {
         android.defaultConfig.vectorDrawables.useSupportLibrary = true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        def apikeyPropertiesFile = rootProject.file("apikey.properties")
+        def apikeyProperties = new Properties()
+        apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
+
+        //buildConfigField("String", "GOOGLEMAPS_KEY", apikeyProperties['GOOGLEMAPS_KEY'])
+        buildConfigField("String", "TOMTOM_KEY", apikeyProperties['TOMTOM_KEY'])
+        manifestPlaceholders = [GOOGLEMAPS_KEY : apikeyProperties['GOOGLEMAPS_KEY']]
     }
 
     buildTypes {
